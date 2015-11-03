@@ -1,0 +1,21 @@
+{
+  "name": "d3js",
+  "description": "d3js test stuff",
+  "main": "index.js",
+  "authors": [
+    "bellicose mellicose"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bellicose100xp/d3js",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6"
+  }
+}
