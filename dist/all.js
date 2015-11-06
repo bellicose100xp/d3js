@@ -39,12 +39,12 @@
         }
     });
 
-    var parentSvg = d3.select('body').append('svg');
+    var parentDiv = d3.select('body').append('div');
 
-    parentSvg.attr({
-        width: width,
-        'max-width': width,
-        height: _height + 40,
+    parentDiv.style({
+        width: width + 'px',
+        height: _height + 40 + 'px'
+    }).attr({
         id: 'bar-chart'
     });
 
@@ -82,7 +82,8 @@
 
     // let brushSvg = d3.select('body')
     var brushSvg = d3.select('#bar-chart').append('svg').attr({
-        width: width
+        width: width,
+        height: 30
     });
 
     var brushGroup = brushSvg.append('g');
@@ -95,7 +96,7 @@
     brushGroup.selectAll(".extent").style({ fill: "#78C5C5", visibility: "visible" });
     brushGroup.selectAll(".resize rect").style({ fill: "#276C86", visibility: "visible" });
 
-    brushGroup.attr('transform', 'translate(0, ' + (_height + 2) + ')');
+    //   brushGroup.attr('transform', `translate(0, ${height + 2})`);
 
     //============= CREATE =======================
     var addBarChart = function addBarChart() {
@@ -276,7 +277,7 @@
                 return h - d.sales;
             }).interpolate('linear');
 
-            var parentSvg = d3.select('body').append('div').style({
+            d3.select('body').append('div').style({
                 width: w + 'px',
                 height: h * 2 + 'px'
             }).attr({

@@ -33,15 +33,16 @@
         }
     });
 
-    let parentSvg = d3.select('body')
-        .append('svg');
+    let parentDiv = d3.select('body')
+        .append('div');
 
-    parentSvg.attr({
-        width: width,
-        'max-width': width,
-        height: height + 40,
-        id: 'bar-chart'
-    });
+    parentDiv.style({
+            width: `${width}px`,
+            height: `${height + 40}px`
+        })
+        .attr({
+            id: 'bar-chart'
+        });
 
     // let svg = d3.select('body')
     let svg = d3.select('#bar-chart')
@@ -92,7 +93,8 @@
     let brushSvg = d3.select('#bar-chart')
         .append('svg')
         .attr({
-            width: width
+            width: width,
+            height: 30
         });
 
     let brushGroup = brushSvg.append('g');
@@ -107,7 +109,7 @@
     brushGroup.selectAll(".resize rect")
         .style({fill: "#276C86", visibility: "visible"});
 
-    brushGroup.attr('transform', `translate(0, ${height + 2})`);
+    //   brushGroup.attr('transform', `translate(0, ${height + 2})`);
 
 //============= CREATE =======================
     let addBarChart = () => {

@@ -22,11 +22,11 @@
                 .y(d => h - d.sales)
                 .interpolate('linear');
 
-            let parentSvg = d3.select('body')
+             d3.select('body')
                 .append('div')
                 .style({
                     width: `${w}px`,
-                    height: `${h * 2}px`
+                    height: `${h * 2}px`,
                 })
                 .attr({
                     id: 'line-chart'
