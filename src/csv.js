@@ -26,7 +26,7 @@
                 .append('div')
                 .style({
                     width: `${w}px`,
-                    height: `${h * 2}px`,
+                    height: `${h * 2}px`
                 })
                 .attr({
                     id: 'line-chart'
